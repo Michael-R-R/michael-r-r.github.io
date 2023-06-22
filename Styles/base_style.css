@@ -19,14 +19,14 @@ header
     text-align: center;
 }
 
-header p#site-title
+header #site-title
 {
     font-size: 35px;
     padding-top: 90px;
     padding-bottom: 20px;
 }
 
-header p#site-description
+header #site-description
 {
     font-size: 16px;
     padding-bottom: 35px;
@@ -42,7 +42,7 @@ footer
     width: 100%;
 }
 
-footer nav.v-navigation
+footer .v-navigation
 {
     width: 100%;
     text-align: center;
@@ -61,7 +61,7 @@ li img
 }
 
 /* Horizontal */
-nav.h-nav ul
+.h-nav ul
 {
     display: flex;
     flex-flow: row wrap;
@@ -71,14 +71,14 @@ nav.h-nav ul
     background: rgb(49, 49, 49);
 }
 
-nav.h-nav li
+.h-nav li
 {
     background: rgb(49, 49, 49);
     padding: 1.5em;
 }
 
 /* Vertical */
-nav.v-navigation ul
+.v-navigation ul
 {
     display: flex;
     flex-flow: row wrap;
@@ -100,7 +100,7 @@ a:visited
 }
 
 /* --- id: site-banner --- */
-div#site-banner
+#site-banner
 {
     width: 100%;
     background: rgb(49, 49, 49);
@@ -108,45 +108,20 @@ div#site-banner
     overflow: visible;
 }
 
-div#site-banner-img
+#site-banner-img
 {
     width: 100%;
     max-height: 768px;
     overflow: hidden;
 }
 
-div#site-banner img
+#site-banner img
 {
     width: 100%;
-}
-
-/* --- Class: h-flexbox --- */
-div.h-flexbox
-{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 5px 10px 5px;
-    width: 100%;
-    height: 100%;
-}
-
-/* --- Class: v-flex-item --- */
-
-div.v-flex-item
-{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 10px 10px 10px;
-    width: 50%;
 }
 
 /* --- Class: v-inner-item --- */
-
-div.v-inner-item
+.v-inner-item
 {
     justify-content: center;
     text-align: center;
@@ -159,7 +134,7 @@ div.v-inner-item
     border-radius: 5px;
 }
 
-div.v-inner-item h1
+.v-inner-item h1
 {
     background: rgb(49, 49, 49);
     font-size: 30px;
@@ -171,23 +146,23 @@ div.v-inner-item h1
     border-radius: 10px;
 }
 
-div.v-inner-item h1 a
+.v-inner-item h1 a
 {
     transition: opacity 0.5s ease;
 }
 
-div.v-inner-item h1 a:hover
+.v-inner-item h1 a:hover
 {
     opacity: 0.3;
 }
 
-div.v-inner-item nav.v-navigation li
+.v-inner-item .v-navigation li
 {
     font-size: 1.2em;
     padding-bottom: 1.5em;
 }
 
-div.v-inner-item nav.v-navigation li a img
+.v-inner-item .v-navigation li a img
 {
     width: 40%;
 }
@@ -227,7 +202,7 @@ div.v-inner-item nav.v-navigation li a img
 }
 
 /* --- Class: v-break --- */
-div.v-break
+.v-break
 {
     padding-top: 30px;
 }
@@ -250,4 +225,52 @@ div.v-break
 #github-icon
 {
     width: 1.2em;
+}
+
+@media only screen and (max-width: 640px)
+{
+    .h-flexbox
+    {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 5px 10px 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .v-flex-item
+    {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 641px)
+{
+    .h-flexbox
+    {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 5px 10px 5px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .v-flex-item
+    {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        width: 50%;
+    }
 }
