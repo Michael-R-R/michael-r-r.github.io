@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+/* --- html --- */
+html
+{
+    height: 100%;
+}
+
+/* --- Body --- */
+body
+{
+    color: beige;
+    background: rgb(67, 67, 67);
+}
+
+/* --- Header --- */
+header
+{
+    text-align: center;
+}
+
+header p#site-title
+{
+    font-size: 35px;
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+header p#site-description
+{
+    font-size: 16px;
+    padding-bottom: 35px;
+}
+
+/* --- Footer --- */
+footer
+{
+    background: rgb(49, 49, 49);
+    color: beige;
+    font-size: 0.9em;
+    padding: 10px;
+    width: 100%;
+}
+
+footer nav.v-navigation
+{
+    width: 100%;
+    text-align: center;
+}
+
+/* --- Navigation Lists --- */
+nav ul
+{
+    font-size: 1.3em;
+}
+
+li img
+{
+    box-shadow: 10px 5px 5px rgb(49, 49, 49);
+    border-radius: 5px;
+}
+
+/* Horizontal */
+nav.h-nav ul
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background: rgb(49, 49, 49);
+}
+
+nav.h-nav li
+{
+    background: rgb(49, 49, 49);
+    padding: 1.5em;
+}
+
+/* Vertical */
+nav.v-navigation ul
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    line-height: 2em;
+}
+
+/* --- Links --- */
+a
+{
+    text-decoration: none;
+}
+
+a:link,
+a:visited
+{
+    color: beige;
+}
+
+/* --- id: site-banner --- */
+div#site-banner
+{
+    width: 100%;
+    background: rgb(49, 49, 49);
+    padding-bottom: 40px;
+    overflow: visible;
+}
+
+div#site-banner-img
+{
+    width: 100%;
+    max-height: 768px;
+    overflow: hidden;
+}
+
+div#site-banner img
+{
+    width: 100%;
+}
+
+/* --- Class: h-flexbox --- */
+div.h-flexbox
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 5px 10px 5px;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Class: v-flex-item --- */
+
+div.v-flex-item
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    width: 50%;
+}
+
+/* --- Class: v-inner-item --- */
+
+div.v-inner-item
+{
+    justify-content: center;
+    text-align: center;
+    border: 8px;
+    border-color: rgb(49, 49, 49);
+    border-style: solid;
+    padding: 0px 10px 0px 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+div.v-inner-item h1
+{
+    background: rgb(49, 49, 49);
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+div.v-inner-item h1 a
+{
+    transition: opacity 0.5s ease;
+}
+
+div.v-inner-item h1 a:hover
+{
+    opacity: 0.3;
+}
+
+div.v-inner-item nav.v-navigation li
+{
+    font-size: 1.2em;
+    padding-bottom: 1.5em;
+}
+
+div.v-inner-item nav.v-navigation li a img
+{
+    width: 40%;
+}
+
+/* --- Class: ul-item-preview --- */
+.ul-item-preview
+{
+    margin-top: 50px;
+}
+
+.ul-item-preview li, .ul-item-preview li a
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.ul-item-preview-title
+{
+    font-weight: bold;
+    max-width: 60%;
+}
+
+.ul-item-preview-description
+{
+    font-size: 0.7em;
+    margin: 0% 30% 0% 30%;
+    max-height: 256px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ul-item-preview-date
+{
+    font-size: 0.6em;
+    opacity: 0.8;
+}
+
+/* --- Class: v-break --- */
+div.v-break
+{
+    padding-top: 30px;
+}
+
+/* -------- IDs ------ */
+
+#see-more-banner1, #see-more-banner2
+{
+    background: rgb(49, 49, 49);
+    font-size: 16px;
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+#github-icon
+{
+    width: 1.2em;
+}
