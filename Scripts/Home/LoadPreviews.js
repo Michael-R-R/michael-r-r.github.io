@@ -3,14 +3,14 @@
 import { read } from "/Scripts/ReadFile.js";
 
 // Projects
-loadPreview("ul-item-preview-0", "/Pages/Projects/6-21-23.html");
-loadPreview("ul-item-preview-1", "/Pages/Projects/6-20-23.html");
-loadPreview("ul-item-preview-2", "/Pages/Projects/6-19-23.html");
+loadPreview("ul-item-preview-0", "/Pages/Projects/2023-06-21.html");
+loadPreview("ul-item-preview-1", "/Pages/Projects/2023-06-20.html");
+loadPreview("ul-item-preview-2", "/Pages/Projects/2023-06-19.html");
 
 // Articles
-loadPreview("ul-item-preview-3", "/Pages/Articles/6-21-23.html");
-loadPreview("ul-item-preview-4", "/Pages/Articles/6-20-23.html");
-loadPreview("ul-item-preview-5", "/Pages/Articles/6-19-23.html");
+loadPreview("ul-item-preview-3", "/Pages/Articles/2023-03-20.html");
+loadPreview("ul-item-preview-4", "/Pages/Articles/2022-11-17.html");
+loadPreview("ul-item-preview-5", "/Pages/Articles/2022-10-13.html");
 
 function loadPreview(previewId, pagePath,)
 {
