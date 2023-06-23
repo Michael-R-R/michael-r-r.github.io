@@ -19,33 +19,36 @@
             <div class="v-flex-item">
                 <div class="v-inner-item">
 
-                    <div id="email-area" class="user-area">
-                        <label for="email-input" class="user-label">Email</label>
-                        <br>
-                        <input type="text" name="email-input" id="email-input" class="user-input" size="50">
-                    </div>
+                    <form id="input-form" action="">
+                        <div id="email-area" class="user-area">
+                            <label for="email-input" class="user-label">Email</label>
+                            <br>
+                            <input type="email" name="email-input" id="email-input" class="user-input" size="50" required>
+                        </div>
+    
+                        <div class="v-break"></div>
+    
+                        <div id="subject-area" class="user-area">
+                            <label for="subject-input" class="user-label">Subject</label>
+                            <br>
+                            <input type="text" name="subject-input" id="subject-input" class="user-input" size="50" required>
+                        </div>
+    
+                        <div class="v-break"></div>
+    
+                        <div id="messagebox-area" class="user-area">
+                            <label for="messagebox-input" class="user-label">Message</label>
+                            <br>
+                            <textarea name="messagebox-input" id="messagebox-input" class="user-input" rows="20" required></textarea>
+                        </div>
+    
+                        <div class="v-break"></div>
+    
+                        <div id="user-submit-button" class="user-area">
+                            <button type="submit" id="submit-button">Submit</button>
+                        </div>
+                    </form>
 
-                    <div class="v-break"></div>
-
-                    <div id="subject-area" class="user-area">
-                        <label for="subject-input" class="user-label">Subject</label>
-                        <br>
-                        <input type="text" name="subject-input" id="subject-input" class="user-input" size="50">
-                    </div>
-
-                    <div class="v-break"></div>
-
-                    <div id="messagebox-area" class="user-area">
-                        <label for="messagebox-input" class="user-label">Message</label>
-                        <br>
-                        <textarea name="messagebox-input" id="messagebox-input" class="user-input" rows="20"></textarea>
-                    </div>
-
-                    <div class="v-break"></div>
-
-                    <div id="user-submit-button" class="user-area">
-                        <button type="submit" id="submit-button">Submit</button>
-                    </div>
                 </div>
             </div>
         </div>
