@@ -1,6 +1,6 @@
 "use strict";
 
-export function read(path, func)
+function read(path, func)
 {
     var request = new XMLHttpRequest();
     request.open("GET", path);
