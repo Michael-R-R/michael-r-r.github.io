@@ -5,12 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/Styles/base_reset.css" rel="stylesheet">
         <link href="/Styles/base_style.css" rel="stylesheet">
+        <link href="/Styles/articles.css" rel="stylesheet">
         <script async data-main="/Scripts/Articles/main.js" src="/Scripts/require.js"></script>
         <title>Articles</title>
     </head>
 
     <body>
         <div id="load-header" class="site-header"></div>
+
+        <div class="h-flexbox">
+            <div class="v-flex-item">
+                <div class="v-inner-item">
+                    <nav id="v-nav-1" class="v-navigation">
+                        <ul id="article-previews" class="ul-item-preview"></ul>
+                    </nav>
+                    <button id="load-more-button">Load more</button>
+                </div>
+            </div>
+        </div>
 
         <div id="load-footer"></div>
     </body>

@@ -7,20 +7,27 @@ requirejs(["/Scripts/Util/LoadHeader.js",
            "/Pages/Articles/paths.js"],
 function()
 {
+    createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames());
+    createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames());
+
     highlightNavigation("v-nav-1", "li");
     highlightNavigation("v-nav-2", "li");
 
-    // Project previews
-    let prjFileNames = getProjectFileNames();
-    for(let i = 0; i < 3; i++)
+    function createPreviews(ulID, previewId, dirPath, fileNames)
     {
-        loadPagePreview("ul-project-preview-" + i, "/Pages/Projects/" + prjFileNames[i]);
-    }
+        let ul = document.getElementById(ulID);
+        for(let i = 0; i < 3; i++)
+        {
+            let liPreview = document.createElement("li");
+            liPreview.className = "item-preview-post";
 
-    // Article previews
-    let artFileNames = getArticleFileNames();
-    for(let i = 0; i < 3; i++)
-    {
-        loadPagePreview("ul-article-preview-" + i, "/Pages/Articles/" + artFileNames[i]);
+            let aPreview = document.createElement("a");
+            aPreview.id = previewId + i;
+
+            liPreview.appendChild(aPreview);
+            ul.appendChild(liPreview);
+
+            loadPagePreview(aPreview.id, dirPath + fileNames[i]);
+        }
     }
 });

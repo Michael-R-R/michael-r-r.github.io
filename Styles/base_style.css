@@ -186,6 +186,41 @@ a:visited
     padding-top: 30px;
 }
 
+/* -------- Page previews ------ */
+.preview-title
+{
+    font-weight: bold;
+    max-width: 60%;
+}
+
+.preview-date
+{
+    font-size: 0.6em;
+    opacity: 0.8;
+}
+
+/* -------- Button ------ */
+button
+{
+    display: block;
+    background-color: rgb(49, 49, 49);
+    border: 3px solid rgb(36, 36, 36);
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover
+{
+    background-color: rgb(58, 58, 58);
+}
+
+button:active
+{
+    background-color: rgb(26, 26, 26);
+}
+
 /* -------- IDs ------ */
 #see-more-banner1, #see-more-banner2
 {
@@ -203,19 +238,6 @@ a:visited
 #github-icon
 {
     width: 1.2em;
-}
-
-/* -------- Page previews ------ */
-.preview-title
-{
-    font-weight: bold;
-    max-width: 60%;
-}
-
-.preview-date
-{
-    font-size: 0.6em;
-    opacity: 0.8;
 }
 
 @media only screen and (max-width: 640px)

@@ -30,27 +30,6 @@
     resize: none;
 }
 
-#submit-button
-{
-    display: block;
-    background-color: rgb(49, 49, 49);
-    border: 3px solid rgb(36, 36, 36);
-    color: white;
-    padding: 15px 32px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#submit-button:hover
-{
-    background-color: rgb(58, 58, 58);
-}
-
-#submit-button:active
-{
-    background-color: rgb(26, 26, 26);
-}
-
 input:invalid
 {
     background-color: rgba(147, 1, 0, 0.5);
