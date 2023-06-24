@@ -1,5 +1,3 @@
-"use strict";
-
 function highlightNavigation(id, selector)
 {
     let nav = document.getElementById(id);

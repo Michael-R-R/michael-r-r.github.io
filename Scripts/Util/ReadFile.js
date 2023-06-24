@@ -1,6 +1,4 @@
-"use strict";
-
-function read(path, func)
+function readFile(path, func)
 {
     var request = new XMLHttpRequest();
     request.open("GET", path);

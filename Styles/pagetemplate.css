@@ -1,0 +1,50 @@
+#title
+{
+    font-size: 26px;
+    margin: 2% 0% 2% 0%;
+}
+
+#date
+{
+    margin: 0% 0% 2% 0%;
+}
+
+#content
+{
+    margin: 5%;
+}
+
+.v-inner-item
+{
+    font-size: 22px;
+    line-height: 1.6em;
+}
+
+@media only screen and (max-width: 640px)
+{
+    .v-flex-item
+    {
+        width: 100%;
+    }
+    
+    .v-flex-item img
+    {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 641px)
+{
+    .v-flex-item
+    {
+        width: 60%;
+    }
+    
+    .v-flex-item img
+    {
+        width: 70%;
+        margin: 0% auto 0% auto
+    }
+}

@@ -1,29 +1,26 @@
 requirejs(["/Scripts/Util/LoadHeader.js",
            "/Scripts/Util/LoadFooter.js",
            "/Scripts/Util/ReadFile.js",
-           "/Scripts/Common/NavigationHighlighter.js"],
+           "/Scripts/Util/LoadPagePreview.js",
+           "/Scripts/Util/NavigationHighlighter.js",
+           "/Pages/Projects/paths.js",
+           "/Pages/Articles/paths.js"],
 function()
 {
     highlightNavigation("v-nav-1", "li");
     highlightNavigation("v-nav-2", "li");
 
-    // Projects
-    loadPreview("ul-item-preview-0", "/Pages/Projects/2023-06-21.html");
-    loadPreview("ul-item-preview-1", "/Pages/Projects/2023-06-20.html");
-    loadPreview("ul-item-preview-2", "/Pages/Projects/2023-06-19.html");
-
-    // Articles
-    loadPreview("ul-item-preview-3", "/Pages/Articles/2023-03-20.html");
-    loadPreview("ul-item-preview-4", "/Pages/Articles/2022-11-17.html");
-    loadPreview("ul-item-preview-5", "/Pages/Articles/2022-10-13.html");
-});
-
-function loadPreview(previewId, pagePath,)
-{
-    read(pagePath, function(str)
+    // Project previews
+    let prjFileNames = getProjectFileNames();
+    for(let i = 0; i < 3; i++)
     {
-        let previewItem = document.getElementById(previewId);
-        previewItem.href = pagePath;
-        previewItem.innerHTML = str;
-    });
-}
+        loadPagePreview("ul-project-preview-" + i, "/Pages/Projects/" + prjFileNames[i]);
+    }
+
+    // Article previews
+    let artFileNames = getArticleFileNames();
+    for(let i = 0; i < 3; i++)
+    {
+        loadPagePreview("ul-article-preview-" + i, "/Pages/Articles/" + artFileNames[i]);
+    }
+});
