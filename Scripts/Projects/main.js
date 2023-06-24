@@ -10,11 +10,13 @@ function()
 
     loadButton.onclick = loadMorePosts;
 
-    createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames(), 0, 6);
+    createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames(), 0, 2);
     highlightNavigation("v-nav-1", "li");
 
     function createPreviews(ulID, previewId, dirPath, fileNames, start, end)
     {
+        end = (end > fileNames.length) ? fileNames.length : end;
+
         let ul = document.getElementById(ulID);
         for(let i = start; i < end; i++)
         {
@@ -37,7 +39,7 @@ function()
 
     function loadMorePosts(e)
     {
-        createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames(), postCount, 3);
+        createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames(), postCount, postCount + 3);
         
         highlightNavigation("v-nav-1", "li");}
 });
