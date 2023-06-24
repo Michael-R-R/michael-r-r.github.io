@@ -10,7 +10,7 @@ function()
 
     loadButton.onclick = loadMorePosts;
 
-    createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames(), 0, 2);
+    createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames(), 0, 6);
     highlightNavigation("v-nav-1", "li");
 
     function createPreviews(ulID, previewId, dirPath, fileNames, start, end)
