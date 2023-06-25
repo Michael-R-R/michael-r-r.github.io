@@ -14,74 +14,76 @@
 
     <body>
         <div id="content" hidden>
-            For the past few weeks I have been working on improving and implementing more 
-            functionality to my Entity-Component-System. Things are really beginning to 
-            shape up and come together into a entire package. In this update we will be taking 
-            a look at my ECS implementation and we will have a look at a cube entity creation 
-            performance stress test. Let us start with the ECS first. <br><br>
+            <p>
+                For the past few weeks I have been working on improving and implementing more 
+                functionality to my Entity-Component-System. Things are really beginning to 
+                shape up and come together into a entire package. In this update we will be taking 
+                a look at my ECS implementation and we will have a look at a cube entity creation 
+                performance stress test. Let us start with the ECS first. <br><br>
 
-            The entire purpose of undergoing the pursuit of a ECS was because I wanted to have the 
-            ability to have more flexible game objects. I had found that class inheritance was a 
-            busy mess and would only get worse the more things I needed to develop. With a ECS I 
-            now have better capabilities of defining what exactly entails a game object or in other 
-            terms a entity. <br><br>
+                The entire purpose of undergoing the pursuit of a ECS was because I wanted to have the 
+                ability to have more flexible game objects. I had found that class inheritance was a 
+                busy mess and would only get worse the more things I needed to develop. With a ECS I 
+                now have better capabilities of defining what exactly entails a game object or in other 
+                terms a entity. <br><br>
 
-            Let us examine a cube entity and what components make it up. At the moment there are 
-            six components that define what a cube entity is. They are as follows: name; transform; 
-            mesh; shader; material; and renderable. See the following image below. <br><br>
+                Let us examine a cube entity and what components make it up. At the moment there are 
+                six components that define what a cube entity is. They are as follows: name; transform; 
+                mesh; shader; material; and renderable. See the following image below. <br><br>
 
-            The great part about using a ECS is that this current cube entity doesn’t have to remain 
-            as a cube entity. For example if we wanted to attach a new mesh to this entity then we 
-            simply just select a new mesh from the drop down menu and we now have an entire new 
-            looking entity, such as a plane/quad entity. The components are what define what an 
-            entity is and this allows for any combination of entities to be created without crazy 
-            inheritance trees or super classes. <br><br>
+                The great part about using a ECS is that this current cube entity doesn’t have to remain 
+                as a cube entity. For example if we wanted to attach a new mesh to this entity then we 
+                simply just select a new mesh from the drop down menu and we now have an entire new 
+                looking entity, such as a plane/quad entity. The components are what define what an 
+                entity is and this allows for any combination of entities to be created without crazy 
+                inheritance trees or super classes. <br><br>
 
-            With the understanding of how we can leverage the flexibility of a ECS, let us shift our 
-            focus to the system side of things and talk about a couple design choices I have made. <br><br>
+                With the understanding of how we can leverage the flexibility of a ECS, let us shift our 
+                focus to the system side of things and talk about a couple design choices I have made. <br><br>
 
-            One important part to developing a game engine is speed. We should always be conscious 
-            about performance and memory usage. One way I approached memory usage issues is reusing 
-            assets that have already been created. For instance, if we already have a dragon mesh 
-            that has been loaded into memory and we want to create another entity that utilizes the 
-            same mesh then it only makes sense that we share that mesh asset between the two entities 
-            instead of re-allocating an entire other dragon mesh. We could have 1,000 entities 
-            that use the dragon meshes in the scene, but only one mesh object need be allocated 
-            in memory. <br><br>
+                One important part to developing a game engine is speed. We should always be conscious 
+                about performance and memory usage. One way I approached memory usage issues is reusing 
+                assets that have already been created. For instance, if we already have a dragon mesh 
+                that has been loaded into memory and we want to create another entity that utilizes the 
+                same mesh then it only makes sense that we share that mesh asset between the two entities 
+                instead of re-allocating an entire other dragon mesh. We could have 1,000 entities 
+                that use the dragon meshes in the scene, but only one mesh object need be allocated 
+                in memory. <br><br>
 
-            For performance I mentioned I utilize instance rendering, which brought with it, its own 
-            complications. The limitation about instance rendering is that everything that is going 
-            to be drawn has to be the exact same. For example if I have a cube and a quad we would 
-            need two draw calls because they have different meshes. A cube instance renderable cannot 
-            instance draw a quad and vice versa. Another consideration we have to think about is the 
-            shader being used by each instance draw call. Say we have a cube that uses Blue_Shader 
-            and another cube that uses Red_Shader. This will require two draw calls as well because
-            when it comes time to do a instance draw call, we are drawing all of those meshes at once 
-            with the currently bound shader. So, with that said a renderable object needs to worry 
-            about two things: does it have the same mesh and does it have the same shader? If you can 
-            answer yes to both of those questions then you can utilize instancing. <br><br>
+                For performance I mentioned I utilize instance rendering, which brought with it, its own 
+                complications. The limitation about instance rendering is that everything that is going 
+                to be drawn has to be the exact same. For example if I have a cube and a quad we would 
+                need two draw calls because they have different meshes. A cube instance renderable cannot 
+                instance draw a quad and vice versa. Another consideration we have to think about is the 
+                shader being used by each instance draw call. Say we have a cube that uses Blue_Shader 
+                and another cube that uses Red_Shader. This will require two draw calls as well because
+                when it comes time to do a instance draw call, we are drawing all of those meshes at once 
+                with the currently bound shader. So, with that said a renderable object needs to worry 
+                about two things: does it have the same mesh and does it have the same shader? If you can 
+                answer yes to both of those questions then you can utilize instancing. <br><br>
 
-            Those two previously mentioned limitations are what helped me design my rendering 
-            pipeline in order to achieve better performance. We know that each renderable object 
-            needs to have the same mesh and shader in order to qualify for instancing. What the 
-            system will do for us then is when a user switches a mesh and/or shader it will do a 
-            look up to see if there is a renderable object that shares those two things. If a match 
-            is found then we can utilize that renderable object to add a instance child to it. This 
-            will then detach the entity from the old renderable and then attach it onto the new 
-            renderable. If no matches were found then we simply just create a new renderable object 
-            with the given mesh and shader. Another thing that is useful that feeds into the memory 
-            usage is we garbage collect any renderable objects after detaching an entity from it. 
-            After detaching, if the renderable object no longer has any instance children then we 
-            can safely remove it from memory. <br><br>
+                Those two previously mentioned limitations are what helped me design my rendering 
+                pipeline in order to achieve better performance. We know that each renderable object 
+                needs to have the same mesh and shader in order to qualify for instancing. What the 
+                system will do for us then is when a user switches a mesh and/or shader it will do a 
+                look up to see if there is a renderable object that shares those two things. If a match 
+                is found then we can utilize that renderable object to add a instance child to it. This 
+                will then detach the entity from the old renderable and then attach it onto the new 
+                renderable. If no matches were found then we simply just create a new renderable object 
+                with the given mesh and shader. Another thing that is useful that feeds into the memory 
+                usage is we garbage collect any renderable objects after detaching an entity from it. 
+                After detaching, if the renderable object no longer has any instance children then we 
+                can safely remove it from memory. <br><br>
 
-            Let us now take a look at some stress tests for creating a cube entity. I wanted to 
-            perform this in order to see how well the ECS performed with creating small and large 
-            amounts of entities. For the test I utilized a stop watch in order to record the 
-            time(ms) it takes to create the given amount of cube entities. The creation of the 
-            cube entities takes place all in one go. So, if we create 10 cube entities then we 
-            will loop through and create all ten before further moving forward. Each cube entity 
-            was created with the following five components attached to it: transform; mesh; 
-            material; shader; and renderable. <br><br>
+                Let us now take a look at some stress tests for creating a cube entity. I wanted to 
+                perform this in order to see how well the ECS performed with creating small and large 
+                amounts of entities. For the test I utilized a stop watch in order to record the 
+                time(ms) it takes to create the given amount of cube entities. The creation of the 
+                cube entities takes place all in one go. So, if we create 10 cube entities then we 
+                will loop through and create all ten before further moving forward. Each cube entity 
+                was created with the following five components attached to it: transform; mesh; 
+                material; shader; and renderable. <br><br>
+            </p>
         </div>
     </body>
 </html>

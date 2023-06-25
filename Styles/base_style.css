@@ -48,16 +48,24 @@ footer .v-navigation
     text-align: center;
 }
 
+
+/* --- h1-n --- */
+h1
+{
+    background: rgb(49, 49, 49);
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
 /* --- Navigation Lists --- */
 nav ul
 {
     font-size: 1.3em;
-}
-
-li img
-{
-    box-shadow: 10px 5px 5px rgb(49, 49, 49);
-    border-radius: 5px;
 }
 
 /* Horizontal */
@@ -99,6 +107,13 @@ a:visited
     color: beige;
 }
 
+/* --- img, video --- */
+img, video
+{
+    box-shadow: 10px 5px 5px rgb(49, 49, 49);
+    border-radius: 5px;
+}
+
 /* --- id: site-banner --- */
 #site-banner
 {
@@ -134,23 +149,6 @@ a:visited
     border-radius: 5px;
 }
 
-.v-inner-item h1
-{
-    background: rgb(49, 49, 49);
-    font-size: 30px;
-    letter-spacing: 3px;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-.v-inner-item h1 a
-{
-    transition: opacity 0.5s ease;
-}
-
 .v-inner-item h1 a:hover
 {
     opacity: 0.3;
@@ -167,13 +165,13 @@ a:visited
     width: 40%;
 }
 
-/* --- Class: ul-item-preview --- */
-.ul-item-preview
+/* --- Class: item-preview --- */
+.item-previews
 {
     margin-top: 50px;
 }
 
-.ul-item-preview li, .ul-item-preview li a
+.item-previews li, .item-previews li a
 {
     display: flex;
     flex-flow: column wrap;
@@ -186,13 +184,7 @@ a:visited
     padding-top: 30px;
 }
 
-/* -------- Page previews ------ */
-.preview-title
-{
-    font-weight: bold;
-    max-width: 60%;
-}
-
+/* -------- Item previews ------ */
 .preview-date
 {
     font-size: 0.6em;
@@ -265,6 +257,20 @@ button:active
         margin-right: auto;
     }
 
+    .v-flex-item img, .v-flex-item video
+    {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .preview-title
+    {
+        font-size: 20px;
+        width: 90%;
+        padding: 5px;
+    }
+
     .preview-description
     {
         font-size: 0.7em;
@@ -298,6 +304,19 @@ button:active
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .v-flex-item img, .v-flex-item video
+    {
+        width: 70%;
+        margin: 0% auto 0% auto
+    }
+
+    .preview-title
+    {
+        font-size: 20px;
+        width: 60%;
+        padding: 5px;
     }
 
     .preview-description

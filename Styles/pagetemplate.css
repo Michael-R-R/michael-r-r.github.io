@@ -20,18 +20,21 @@
     line-height: 1.6em;
 }
 
+.v-inner-item p
+{
+    text-align: left;
+}
+
+ul li
+{
+    text-align: left;
+}
+
 @media only screen and (max-width: 640px)
 {
     .v-flex-item
     {
         width: 100%;
-    }
-    
-    .v-flex-item img
-    {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
@@ -40,11 +43,5 @@
     .v-flex-item
     {
         width: 60%;
-    }
-    
-    .v-flex-item img
-    {
-        width: 70%;
-        margin: 0% auto 0% auto
     }
 }

@@ -14,13 +14,13 @@ function loadPagePreview(id, path)
             let title = info.dataset.title;
             let coverImg = info.dataset.img;
             let date = info.dataset.date;
-            let description = tempDoc.getElementById("content").innerHTML;
+            let description = tempDoc.getElementById("content").innerText;
 
             let previewItem = document.getElementById(id);
             previewItem.href = path;
             previewItem.innerHTML = 
             `
-                <p class="preview-title">${title}</p>
+                <h1 class="preview-title">${title}</h1>
                 <img class="preview-cover-img" src="${coverImg}" alt="">
                 <p class="preview-description">${description}</p>
                 <p class="preview-date">${date}</p>
