@@ -25,6 +25,11 @@
     text-align: left;
 }
 
+ul
+{
+    list-style: square;
+}
+
 ul li
 {
     text-align: left;

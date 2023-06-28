@@ -62,6 +62,22 @@ h1
     border-radius: 10px;
 }
 
+h2
+{
+    background: rgb(49, 49, 49);
+    font-size: 28px;
+    letter-spacing: 3px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 /* --- Navigation Lists --- */
 nav ul
 {
