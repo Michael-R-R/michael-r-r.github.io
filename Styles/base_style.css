@@ -67,8 +67,9 @@ h2
     background: rgb(49, 49, 49);
     font-size: 28px;
     letter-spacing: 3px;
-    padding-top: 28px;
-    padding-bottom: 28px;
+    line-height: 1.1em;
+    padding-top: 14px;
+    padding-bottom: 14px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
