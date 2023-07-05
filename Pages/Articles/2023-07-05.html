@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/Styles/base_reset.css">
+        <link rel="stylesheet" href="/Styles/base_style.css">
+        <script src="/Scripts/require.js"></script>
+        <script defer src="/Scripts/Util/LoadTemplatePage.js"></script>
+        <script defer src="/Scripts/Util/LoadHeader.js"></script>
+        <script defer src="/Scripts/Util/LoadFooter.js"></script>
+        <div id="info" data-title="Serializing Instanced Data" data-img="/Resources/Articles/instance_demo_cover.png" data-date="7-5-2023"></div>
+    </head>
+
+    <body>
+        <div id="content" hidden>
+            <h1>Discuss</h1>
+            <p>
+                As of late I have been working on re-imagining what a renderable (things you see drawn to screen) is. 
+                I wanted a more flexible (who doesn't?) class that makes it easier to work with any type of renderable we might need,
+                meaning the buffers that make up that renderable and whether or not that renderable is instanceable. The latter being
+                the most important part to handle, in my opinion, because a lot of the render engine is built to support a strong instancing pipeline
+                in order to gain efficient frame times. <br><br>
+
+                So, here in this quick update, is a demo of such a system implemented. A flexible renderable class that can be easily created
+                to handle index based rendering, vertex based rendering, or instance version of both those rendering methods. The great
+                thing is that even when you have hidden instance data for any given renderable, that data is still able to be serialized,
+                and then deserialized without any loss of instances. <br><br>
+
+                Below is the short demo of testing such an index-based instance renderable. It highlights the benefits of such system
+                with fast instance creation, fast show/hide functionality, and the powerful serializing capabilities. <br><br>
+
+                In the video I first start off with creating our required resources that make up a renderable: mesh, material, and shader. Afterwards
+                I demonstrate adding instances of that renderable, followed by a quick showcase of hiding and showing the instances. I then create 1000
+                simple cube instances to demonstrate the quickness of batch instance creation. This is even quite fast for higher vertice count meshes,
+                as well. Lastly, in the video, I demonstrate serializing all the hidden instances we have created thus far, I then clear the current 
+                renderable by creating a new set of resources, and then deserialize the previous renderable, and then show all the hidden instances
+                to prove that we have in fact successfully reacquired the serialized renderable. <br><br>
+            </p>
+
+            <video autoplay loop src="/Resources/Articles/instance_demo.mp4"></video>
+        </div>
+    </body>
+</html>

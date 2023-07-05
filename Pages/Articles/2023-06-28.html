@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/Styles/base_reset.css">
+        <link rel="stylesheet" href="/Styles/base_style.css">
+        <script src="/Scripts/require.js"></script>
+        <script defer src="/Scripts/Util/LoadTemplatePage.js"></script>
+        <script defer src="/Scripts/Util/LoadHeader.js"></script>
+        <script defer src="/Scripts/Util/LoadFooter.js"></script>
+        <div id="info" data-title="Dangers of Static Variables (C++)" data-img="" data-date="6-28-2023"></div>
+    </head>
+
+    <body>
+        <div id="content" hidden>
+            <h1>Discuss</h1>
+            <p>
+                C++ is an object-oriented programming language. When we think in terms of 
+                object orientation one might think encapsulation and objects that handle and take care 
+                of their own data. When that object gets created we can easily or at least it should be 
+                easy to track the lifetime of that object and the data that it contains whether it is created 
+                on the stack or the heap. With this idea in mind, we can begin to see why declaring 
+                static member variables in your classes can be a dangerous act as long as we 
+                understand what that static variable is doing. <br><br>
+
+                Static member variables do not play by the same rules as the rest of your class’s 
+                other member variables. Say for instance you create an object on the stack within a 
+                local scope, change that static member variable's data, and then exit the scope in turn 
+                destroying that object. No harm, no foul, right? Not quite. That static member variable 
+                will outlive that object even though it has been destroyed. It doesn’t fear death like the 
+                object because its lifetime spans from start up to shut down of the program. Essentially, 
+                the static member variable belongs to the class and not the objects themselves. To give 
+                a better understanding of what I am talking about let’s take a closer look with an 
+                example. <br><br>
+
+                Consider the following small class, Foo: <br>
+                <strong>.h file</strong>
+                <pre>
+                    <code>
+                        #pragma once
+                        class Foo
+                        {
+                            static int smallNumber;
+                            int bigNumber;
+                        public:
+                            Foo();
+                            ~Foo();
+                            void loop(const unsigned amount);
+                            int getSmallNumber() { return smallNumber; }
+                            int getBigNumber() { return bigNumber; }
+                        };
+                    </code>
+                </pre>
+            </p>
+        </div>
+    </body>
+</html>
