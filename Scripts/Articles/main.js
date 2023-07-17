@@ -10,7 +10,7 @@ function()
 
     loadButton.onclick = loadMorePosts;
 
-    createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames(), 0, 6);
+    createPreviews("article-preview", "article-preview-", "/Pages/Articles/", getArticleFileNames(), 0, 6);
     highlightNavigation("v-nav-1", "li");
 
     function createPreviews(ulID, previewId, dirPath, fileNames, start, end)
@@ -39,7 +39,7 @@ function()
 
     function loadMorePosts(e)
     {
-        createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames(), postCount, postCount + 3);
+        createPreviews("article-preview", "article-preview-", "/Pages/Articles/", getArticleFileNames(), postCount, postCount + 3);
         
         highlightNavigation("v-nav-1", "li");
     }

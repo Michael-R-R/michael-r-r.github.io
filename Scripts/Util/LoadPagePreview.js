@@ -20,10 +20,10 @@ function loadPagePreview(id, path)
             previewItem.href = path;
             previewItem.innerHTML = 
             `
-                <h1 class="preview-title">${title}</h1>
-                <img class="preview-cover-img" src="${coverImg}" alt="">
-                <p class="preview-description">${description}</p>
-                <p class="preview-date">${date}</p>
+                <h1 class="item-preview-title">${title}</h1>
+                <img class="item-preview-cover-img" src="${coverImg}" alt="">
+                <p class="item-preview-description">${description}</p>
+                <p class="item-preview-date">${date}</p>
             `;
         });
     });

@@ -7,8 +7,8 @@ requirejs(["/Scripts/Util/LoadHeader.js",
            "/Pages/Articles/paths.js"],
 function()
 {
-    createPreviews("project-previews", "project-preview-", "/Pages/Projects/", getProjectFileNames());
-    createPreviews("article-previews", "article-preview-", "/Pages/Articles/", getArticleFileNames());
+    createPreviews("project-preview", "project-preview-", "/Pages/Projects/", getProjectFileNames());
+    createPreviews("article-preview", "article-preview-", "/Pages/Articles/", getArticleFileNames());
 
     highlightNavigation("v-nav-1", "li");
     highlightNavigation("v-nav-2", "li");
