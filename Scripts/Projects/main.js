@@ -11,7 +11,7 @@ function()
     loadButton.onclick = loadMorePosts;
 
     createPreviews("project-preview", "project-preview-", "/Pages/Projects/", getProjectFileNames(), 0, 6);
-    highlightNavigation("v-nav-1", "li");
+    highlightNavigation("v-nav-projects", "li");
 
     function createPreviews(ulID, previewId, dirPath, fileNames, start, end)
     {

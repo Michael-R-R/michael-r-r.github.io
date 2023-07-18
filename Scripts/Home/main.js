@@ -10,8 +10,8 @@ function()
     createPreviews("project-preview", "project-preview-", "/Pages/Projects/", getProjectFileNames());
     createPreviews("article-preview", "article-preview-", "/Pages/Articles/", getArticleFileNames());
 
-    highlightNavigation("v-nav-1", "li");
-    highlightNavigation("v-nav-2", "li");
+    highlightNavigation("v-nav-projects", "li");
+    highlightNavigation("v-nav-articles", "li");
 
     function createPreviews(ulID, previewId, dirPath, fileNames)
     {

@@ -16,13 +16,13 @@
     margin: 5%;
 }
 
-.v-inner-item
+.v-flex-item
 {
     font-size: 22px;
     line-height: 1.6em;
 }
 
-.v-inner-item p
+.v-flex-item p
 {
     text-align: left;
 }
@@ -35,20 +35,4 @@ ul
 ul li
 {
     text-align: left;
-}
-
-@media only screen and (max-width: 640px)
-{
-    .v-flex-item
-    {
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 641px)
-{
-    .v-flex-item
-    {
-        width: 60%;
-    }
 }

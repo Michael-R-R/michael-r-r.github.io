@@ -14,15 +14,15 @@ let body =
 `
     <div id="load-header"></div>
 
-    <div class="v-flex-item">
+    <div class="v-flexbox">
         <h1 id="title">${title}</h1>
         <p id="date">${date}</p>
         <img id="cover-img" src="${coverImg}" alt="">
     </div>
 
     <div class="h-flexbox">
-        <div class="v-flex-item">
-            <div class="v-inner-item">
+        <div class="v-flexbox">
+            <div class="v-flex-item">
                 <div id="content">${content}</div>
             </div>
         </div>
